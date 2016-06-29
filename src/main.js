@@ -6,3 +6,7 @@ ReactDOM.render(
   React.createElement(Counter),
   document.getElementById('mount')
 );
+
+if (module.hot) {
+  module.hot.accept();
+}
