@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var DEBUG = process.env.NODE_ENV === 'production' ? true : false;
-var devCSSLoader = 'css!style';
+var devCSSLoader = "style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]";
 var prodCSSLoader = ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]');
 
 var config = {
@@ -24,7 +24,7 @@ var config = {
       },
       {
         test: /\.css/,
-        loader: DEBUG ? prodCSSLoader : "style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+        loader: DEBUG ? prodCSSLoader : devCSSLoader,
       }
     ],
   },

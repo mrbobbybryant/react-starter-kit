@@ -27,6 +27,6 @@ app.use(webpackHotMiddleware(compiler, {
 
 var server = app.listen(3000, function() {
   var host = server.address().address;
-  var post = server.address().port;
-  console.log('Example app listening as http://%s:%s', host, post);
+  var port = server.address().port;
+  console.log('Example app listening as http://%s:%s', host, port);
 });
